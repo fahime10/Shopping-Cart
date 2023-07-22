@@ -47,6 +47,12 @@ button:hover {
     height: 70vh;
 }
 
+.error-page {
+    text-align: center;
+    background-color: rgb(125, 125, 235);
+    height: 100vh;
+}
+
 .shop {
     background-color: rgb(92, 208, 46);
 }
