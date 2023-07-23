@@ -49,13 +49,18 @@ button:hover {
 .home-page, .shop-page {
     text-align: center;
     background-color: rgb(125, 125, 235);
-    height: 70vh;
     padding-top: 1rem;
+    min-height: 70vh;
+}
+
+.home-page {
+    height: 70vh;
 }
 
 .shop-page img {
-    height: 100px;
-    width: 100px;
+    height: 200px;
+    width: 200px;
+    border-radius: 5px;
 }
 
 .error-page {
@@ -78,14 +83,18 @@ button:hover {
 
 .products-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 2rem;
+    margin: 1rem;
 }
 
 .product-card {
     text-align: center;
     color: crimson;
     background-color: white;
+    border: 2px solid black;
+    padding: 1rem;
 }
 
 footer {

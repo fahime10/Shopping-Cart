@@ -1,18 +1,20 @@
 import { useState, useEffect } from "react";
-import FakeStoreAPI from "./FakeStoreAPI";
 
 const ShopPage = () => {
-    // const { data, error, loading } = FakeStoreAPI();
     const [products, setProducts] = useState([]);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch("https://fakestoreapi.com/products?limit=20")
-            .then((response) => response.json())
-            .then((data) => setProducts(data))
-            .catch((error) => setError("This error occurred: " + error))
-            .finally(() => setLoading(false));
+        fetch("https://fakestoreapi.com/products")
+            .then((res) => res.json())
+            .then((data) => {
+                const related = data.filter((product) => 
+                product.category === "jewelery" || product.category === "electronics");
+                setProducts(related);
+            })
+            .catch((error) => {setError("This error occurred: " + error)})
+            .finally(() => {setLoading(false)});
     }, []);
 
     if (error) return <p>A network error was encountered...</p>;
@@ -23,14 +25,15 @@ const ShopPage = () => {
         <div className="shop-page">
             <h2>Products</h2>
             <div className="products-grid">
-                {products.map((item) => {
-                    <div key={item.id} className="product-card">
-                        <h4>{item.title}</h4>
-                        <p>{item.description}</p>
-                        <p>£{item.price}</p>
+                {products.map((product) => (
+                    <div key={product.id} className="product-card">
+                        <img src={product.image} alt={product.title} />
+                        <h4>{product.title}</h4>
+                        <p>{product.description}</p>
+                        <p>£{product.price}</p>
                         <button>Add to cart</button>
                     </div>
-                })}
+                ))}
             </div>
         </div>
     );
