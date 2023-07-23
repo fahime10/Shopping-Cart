@@ -3,6 +3,10 @@ body {
     color: white;
 }
 
+h1, h2 {
+    margin: 0;
+}
+
 button:hover {
     cursor: pointer;
     background-color: blueviolet;
@@ -14,6 +18,7 @@ button:hover {
     justify-content: space-around;
     background-color: rgb(54, 118, 29);
     color: white;
+    padding: 1rem;
 }
 
 .menu-bar img {
@@ -41,10 +46,16 @@ button:hover {
     border-radius: 10px;
 }
 
-.home-page {
+.home-page, .shop-page {
     text-align: center;
     background-color: rgb(125, 125, 235);
     height: 70vh;
+    padding-top: 1rem;
+}
+
+.shop-page img {
+    height: 100px;
+    width: 100px;
 }
 
 .error-page {
@@ -55,6 +66,26 @@ button:hover {
 
 .shop {
     background-color: rgb(92, 208, 46);
+}
+
+.loading {
+    background-color: rgb(125, 125, 235);
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    padding: 10rem;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.product-card {
+    text-align: center;
+    color: crimson;
+    background-color: white;
 }
 
 footer {
