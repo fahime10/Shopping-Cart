@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
+import { v4 as uuidv4 } from "uuid";
+import { Link } from "react-router-dom";
 
-const ShopPage = () => {
+const ShopPage = ({ setCurrentProduct, setPrice }) => {
     const [products, setProducts] = useState([]);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -21,17 +23,35 @@ const ShopPage = () => {
 
     if (loading) return <p className="loading">Loading...</p>;
 
+    function sendProduct(image, title, description, price) {
+        setCurrentProduct(<div className="single-card">
+                            <img src={image} alt={title} />
+                            <h4>{title}</h4>
+                            <p>{description}</p>
+                            <p>£{price}</p>
+                        </div>);
+    
+        setPrice(price);
+    }
+
     return (
         <div className="shop-page">
             <h2>Products</h2>
             <div className="products-grid">
                 {products.map((product) => (
-                    <div key={product.id} className="product-card">
+                    <div key={uuidv4()} className="product-card">
                         <img src={product.image} alt={product.title} />
                         <h4>{product.title}</h4>
                         <p>{product.description}</p>
                         <p>£{product.price}</p>
-                        <button>Add to cart</button>
+                        <Link to="/quantity">
+                            <button onClick={
+                                () => {sendProduct(
+                                        product.image, product.title, product.description, product.price
+                                        )}}>
+                                        Add to cart
+                            </button>
+                        </Link>
                     </div>
                 ))}
             </div>

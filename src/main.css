@@ -7,9 +7,14 @@ h1, h2 {
     margin: 0;
 }
 
-button:hover {
+button {
     cursor: pointer;
+    transition: ease-in-out, 0.5s;
+}
+
+button:hover {
     background-color: blueviolet;
+    transform: scale(0.9);
 }
 
 .menu-bar {
@@ -26,13 +31,13 @@ button:hover {
     width: 40px;
 }
 
-.home, .browse, .shop {
+.home, .browse, .shop, .add-to-cart {
     padding: 0.7rem;
     width: 10rem;
     border-radius: 5px;
 }
 
-.home, .browse {
+.home, .browse, .add-to-cart {
     background-color: rgb(173, 173, 255);
 } 
 
@@ -46,7 +51,7 @@ button:hover {
     border-radius: 10px;
 }
 
-.home-page, .shop-page {
+.home-page, .shop-page, .quantity-page {
     text-align: center;
     background-color: rgb(125, 125, 235);
     padding-top: 1rem;
@@ -57,10 +62,15 @@ button:hover {
     height: 70vh;
 }
 
-.shop-page img {
+.shop-page img, .quantity-page img {
     height: 200px;
     width: 200px;
     border-radius: 5px;
+}
+
+.quantity-page {
+    background-color: white;
+    color: rgb(125, 125, 235);
 }
 
 .error-page {
@@ -94,7 +104,41 @@ button:hover {
     color: crimson;
     background-color: white;
     border: 2px solid black;
+    border-radius: 10px;
     padding: 1rem;
+}
+
+.product-card button {
+    padding: 0.5rem;
+    background-color: darkorange;
+    border-radius: 5px;
+}
+
+.product-card button:hover {
+    background-color: blueviolet;
+    color: white;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.single-card {
+    width: 600px;
+    height: 400px;
+    font-size: smaller;
+    text-align: center;
+    color: crimson;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: auto auto;
+}
+
+.handle-inputs {
+    margin: 1rem;
 }
 
 footer {
