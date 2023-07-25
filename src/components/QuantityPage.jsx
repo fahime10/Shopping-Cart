@@ -45,12 +45,12 @@ const QuantityPage = ({ product, price, cart, setCart }) => {
                     <p>£{price}</p>
                 </div>
                 <div className="handle-inputs">
-                    <button onClick={decrementQuantity}>-</button>
+                    <button onClick={decrementQuantity} className="minus">-</button>
                     <input type="number" maxLength={4} value={quantity} readOnly />
-                    <button onClick={incrementQuantity}>+</button>
+                    <button onClick={incrementQuantity} className="plus">+</button>
                 </div>
                 <div className="price">
-                    Total price: £ {productPrice}
+                    Total price: £ {productPrice.toFixed(2)}
                 </div>
                 <Link to="/shop-page">
                     <button className="add-to-cart" onClick={addToCart}>Add to Cart</button>

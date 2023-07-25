@@ -72,6 +72,19 @@ button:hover {
 
 .home-page {
     height: 70vh;
+    background-image: url("./assets/background.jpg");
+    background-size: cover;
+    color:black;
+}
+
+.information {
+    background-color: white;
+    width: 25rem;
+    text-align: center;
+    margin: auto auto;
+    padding: 1rem;
+    border-radius: 5px;
+    border: 3px solid black;
 }
 
 .shop-page img, .quantity-page img, .cart-page img {
@@ -80,9 +93,20 @@ button:hover {
     border-radius: 5px;
 }
 
-.quantity-page {
-    background-color: white;
-    color: rgb(125, 125, 235);
+.quantity-page input {
+    width: 4rem;
+    height: 1rem;
+    text-align: center;
+}
+
+.minus, .plus {
+    width: 2rem;
+}
+
+.add-to-cart {
+    margin: 1rem;
+    background-color: dimgray;
+    color: white;
 }
 
 .error-page {
