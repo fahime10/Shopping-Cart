@@ -27,8 +27,8 @@ const QuantityPage = ({ product, price, cart, setCart }) => {
             image: currentProduct.image,
             title: currentProduct.title,
             description: currentProduct.description,
-            price: currentProduct.price,
-            quantity: currentProduct.quantity
+            price: productPrice,
+            quantity: quantity
         }]
 
         setCart(cart.concat(order));
@@ -46,7 +46,7 @@ const QuantityPage = ({ product, price, cart, setCart }) => {
                 </div>
                 <div className="handle-inputs">
                     <button onClick={decrementQuantity}>-</button>
-                    <input type="number" maxLength={4} value={quantity} />
+                    <input type="number" maxLength={4} value={quantity} readOnly />
                     <button onClick={incrementQuantity}>+</button>
                 </div>
                 <div className="price">

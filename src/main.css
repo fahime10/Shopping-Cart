@@ -31,7 +31,7 @@ button:hover {
     width: 40px;
 }
 
-.home, .browse, .shop, .add-to-cart {
+.home, .browse, .shop, .add-to-cart, .checkout {
     padding: 0.7rem;
     width: 10rem;
     border-radius: 5px;
@@ -40,6 +40,18 @@ button:hover {
 .home, .browse, .add-to-cart {
     background-color: rgb(173, 173, 255);
 } 
+
+.checkout {
+    background-color: rgb(99, 220, 50);
+    margin: 1rem 0 1rem;
+}
+
+.remove {
+    background-color: rgb(205, 0, 0);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
 
 .search {
     margin-left: 45%;
@@ -51,7 +63,7 @@ button:hover {
     border-radius: 10px;
 }
 
-.home-page, .shop-page, .quantity-page {
+.home-page, .shop-page, .quantity-page, .cart-page {
     text-align: center;
     background-color: rgb(125, 125, 235);
     padding-top: 1rem;
@@ -62,7 +74,7 @@ button:hover {
     height: 70vh;
 }
 
-.shop-page img, .quantity-page img {
+.shop-page img, .quantity-page img, .cart-page img {
     height: 200px;
     width: 200px;
     border-radius: 5px;
@@ -126,15 +138,14 @@ input::-webkit-inner-spin-button {
 }
 
 .single-card {
-    width: 600px;
-    height: 400px;
-    font-size: smaller;
+    max-width: 500px;
     text-align: center;
     color: crimson;
     border: 2px solid black;
     border-radius: 10px;
     padding: 1rem;
     margin: auto auto;
+    background-color: white;
 }
 
 .handle-inputs {

@@ -13,11 +13,6 @@ function App() {
   const [cart, setCart] = useState([]);
   const [currentProduct, setCurrentProduct] = useState(null);
   const [price, setPrice] = useState(0);
-  const [totalPrice, setTotalPrice] = useState(0);
-
-  // const addToCart = (product) => {
-  //   setCart((prevCartItems) => [...prevCartItems, product]);
-  // }
 
   return (
     <>
