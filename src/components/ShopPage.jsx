@@ -24,12 +24,15 @@ const ShopPage = ({ setCurrentProduct, setPrice }) => {
     if (loading) return <p className="loading">Loading...</p>;
 
     function sendProduct(image, title, description, price) {
-        setCurrentProduct(<div className="single-card">
-                            <img src={image} alt={title} />
-                            <h4>{title}</h4>
-                            <p>{description}</p>
-                            <p>£{price}</p>
-                        </div>);
+        const product = 
+        JSON.stringify({ 
+            image: image, 
+            title: title, 
+            description: description, 
+            price: price 
+        });
+        
+        setCurrentProduct(product);
     
         setPrice(price);
     }

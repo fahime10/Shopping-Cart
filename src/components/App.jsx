@@ -7,6 +7,7 @@ import HomePage from './HomePage';
 import ErrorPage from './ErrorPage';
 import ShopPage from './ShopPage';
 import QuantityPage from './QuantityPage';
+import CartPage from './CartPage';
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -29,15 +30,22 @@ function App() {
         <Link to="/shop-page">
           <button type="button" className="browse">Browse Shop</button>
         </Link>
-        <button type="button" className="cart-icon">
-          <img src={CartIcon} />
-          {cart.length}
-        </button>
+        <Link to="/cart-page">
+          <button type="button" className="cart-icon">
+            <img src={CartIcon} />
+            {cart.length}
+          </button>
+        </Link>
       </div>
       <Routes>
         <Route path="/" element={<HomePage />} errorElement={<ErrorPage />} />
-        <Route path="/shop-page" element={<ShopPage setCurrentProduct={setCurrentProduct} setPrice={setPrice} />} />
-        <Route path="/quantity" element={<QuantityPage product={currentProduct} price={price}/>} />
+        <Route path="/shop-page" element={
+          <ShopPage setCurrentProduct={setCurrentProduct} setPrice={setPrice} />
+        } />
+        <Route path="/quantity" element={
+          <QuantityPage product={currentProduct} price={price} cart={cart} setCart={setCart}/>
+        } />
+        <Route path="/cart-page" element={<CartPage cart={cart} setCart={setCart} />} />
       </Routes>
     </HashRouter>
     <footer>Developed by Fahim Ahmed <img src={reactLogo} /></footer>
