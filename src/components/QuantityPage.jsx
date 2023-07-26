@@ -46,7 +46,12 @@ const QuantityPage = ({ product, price, cart, setCart }) => {
                 </div>
                 <div className="handle-inputs">
                     <button onClick={decrementQuantity} className="minus">-</button>
-                    <input type="number" maxLength={4} value={quantity} readOnly />
+                    <input 
+                        type="number" 
+                        maxLength={4} 
+                        value={quantity} 
+                        onChange={event => setQuantity(event.target.value)} 
+                    />
                     <button onClick={incrementQuantity} className="plus">+</button>
                 </div>
                 <div className="price">
